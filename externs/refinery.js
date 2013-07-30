@@ -225,11 +225,29 @@ refinery.Object.prototype = {
     fullname: '',
 
     /**
+     * Attach refinery.Object to DOM object (this.holder)
+     *
+     * @param {!jQuery} holder jQuery wrapper around DOM object
+     *
+     * @return {undefined}
+     */
+    attach_holder: function (holder) { },
+
+    dettach_holder: function () { },
+
+    /**
      * Deinitialization
      *
      * @public
      */
     destroy: function () { },
+
+    /**
+     * Call destroy method od prototype applied to this
+     *
+     * @public
+     */
+    _destroy: function () { },
 
     /**
      * Initialization and binding
@@ -257,29 +275,6 @@ refinery.Object.prototype = {
  * @return {Object}
  */
 refinery.Object.create = function (options) { }
-
-/**
- * Attach refinery.Object to DOM object (this.holder)
- *
- * @param {string} ouid Object Unique Id
- * @param {!jQuery} holder jQuery wrapper around DOM object
- *
- * @return {undefined}
- */
-refinery.Object.attach = function (ouid, holder) {
-}
-
-/**
- * Remove refinery.Object Instance from DOM object (this.holder)
- *
- * @param {string} ouid Object Unique Id
- * @param {Object} holder jQuery wrapper around DOM object
- *
- * @return {undefined}
- */
-refinery.Object.detach = function (ouid, holder) {
-};
-
 
 /**
  * Remove refinery.Object instance from refinery.Object.instances, DOM element

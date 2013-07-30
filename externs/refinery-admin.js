@@ -3,28 +3,6 @@ refinery.admin = {
 };
 
 /**
- *
- * @typedef {{original: string, alt: string, type: string}}
- */
-var images_dialog_object = {
-    alt: '',
-    original: '',
-    type: ''
-};
-
-/**
- *
- * @typedef {{url: string, html: string}}
- */
-var file_dialog_object;
-
-/**
- *
- * @typedef {{url: string, html: string}}
- */
-var link_dialog_object;
-
-/**
  * @constructor
  * @param {*=} options
  * @extends {refinery.Object}
