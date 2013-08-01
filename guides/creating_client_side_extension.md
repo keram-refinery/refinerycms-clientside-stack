@@ -1,34 +1,76 @@
 # Creating Client Side Extension
 
-- clone refinerycms-clientside
+Let we start where we end in "[Start with refinerycsms clientside](./start_with_refinerycms-clientside.md)".
+```
+$ cd ~/work_directory/refinerycms-clientside
 
-cd to ./src folder
+$ cp -r src/refinery-sample src/refinery-name-of-your-extension
 
-create default folders and files
+$ sudo rm -r src/refinery-name-of-your-extension/.git/
+```
+In your favorite editor (suppose it is Sublime .)) replace everything in folder
+``src/refinery-name-of-your-extension`` from ``refinery-sample`` to ``refinery-name-of-your-extension``
+```
+$ cd src/refinery-name-of-your-extension
+$ git init
+$ git commit -a -m 'initial commit'
+```
+Now we have prepared skeleton of our extension.
+Note: steps above will be in "near" furure simplified with extension generator via Yeoman.
+
+Next we go deep in our code of our extension.
+Suppose we want build new wysiwig editor plugin to refinery and I select [epiceditor](http://epiceditor.com/)
+
+Code of this extension you can download from [github](https://github.com/keram-refinery/refinery-epiceditor).
+
+Download third party code to components directory:
+```
+$ ls src/refinery-epiceditor/components/
+EpicEditor  refinery
+$
 
 ```
 
-$ ls -gSDR src/refinery-bootstrap-wysiwyg/
-  src/refinery-bootstrap-wysiwyg/:
-  drwxrwxr-x 4 keram 4096 Jul  8 20:59 components
-  drwxrwxr-x 2 keram 4096 Jul  8 20:16 data
-  drwxrwxr-x 2 keram 4096 Jul  8 20:18 images
-  drwxrwxr-x 2 keram 4096 Jul  8 21:47 scripts
-  drwxrwxr-x 2 keram 4096 Jul  8 20:18 styles
-  drwxrwxr-x 3 keram 4096 Jul  8 20:20 test
-  -rw-rw-r-- 1 keram 1240 Jul  8 21:07 index.html
-  -rw-rw-r-- 1 keram 4883 Jul  8 20:29 module.js
-  -rw-rw-r-- 1 keram  712 Jul  8 20:16 module.json
-  -rw-rw-r-- 1 keram  113 Jul  8 21:08 application.js
-  -rw-rw-r-- 1 keram    0 Jul  8 20:16 README.md
-
+Update our module.js and add our custom configuration of Closure Compiler
+```
+  'options': {
+      'checkModified': true,
+      'compilerOpts': {
+          'compilation_level': 'ADVANCED_OPTIMIZATIONS',
+          //'formatting': 'PRETTY_PRINT',
+          'warning_level': 'verbose',
+          'externs': ['externs/jquery-1.9.js',
+                      'externs/custom.js',
+                      'externs/refinery.js',
+                      'externs/refinery-admin.js',
+                      dir + '/externs/epiceditor.js'
+                      ],
+          'language_in': 'ECMASCRIPT5_STRICT',
+          'summary_detail_level': 3,
+          'output_wrapper': '"(function(window, $, refinery){%output%}(window, jQuery, window.refinery));"'
+      }
+  },
 ```
 
-Fill meta informations and configure tasks, see:
-https://github.com/keram-refinery/refinery-clientside-refinery/tree/master/module.json
-https://github.com/keram-refinery/refinery-clientside-refinery/tree/master/module.js
+where especialy we define _externs_ files for compiler.
+Absolute path to ``externs/jquery-1.9.js`` is ``~/work_directory/refinerycms-clientside/externs/jquery-1.9.js``
+(Global extern file used also by other extensions).
+and for ``dir + '/externs/epiceditor.js'`` is ``~/work_directory/refinerycms-clientside/src/refinery-epiceditor/externs/epiceditor.js``
+(Local extern file used only compile this extension).
 
-Then in console: grunt server
-Visit http://localhost:9000/src/refinery-bootstrap-wysiwyg/
 
+Also we add copy task for including related third party code to compilation
 
+```
+  'epiceditor': {
+      'files': [{
+          'expand': true,
+          'dot': true,
+          'cwd': dir + '/components/EpicEditor/epiceditor/js/',
+          'dest': build_dir + '/javascripts/vendor/epiceditor/',
+          'src': [
+              '*.js'
+          ]
+      }]
+  }
+```
