@@ -2189,3 +2189,8 @@ jQuery.prototype.sortable = function(args) {};
 * @param {...*} args
 */
 jQuery.prototype.nestedSortable = function(args) {};
+
+/**
+* @param {...*} args
+*/
+jQuery.prototype.selectable = function(args) {};
