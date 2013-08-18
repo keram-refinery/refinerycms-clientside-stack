@@ -32,7 +32,20 @@ jQuery.prototype.accordion = function() {};
 
 /**
  *
- * @typedef {{geometry: (string|undefined),
+ * @typedef {{id: (number|undefined),
+ *          url: (string|undefined),
+ *          type: string}}
+ */
+var images_dialog_object = {
+  id: 0,
+  url: '',
+  type: ''
+};
+
+/**
+ *
+ * @typedef {{id: (string|undefined),
+ *          geometry: (string|undefined),
  *          grid: (string|undefined),
  *          large: (string|undefined),
  *          medium: (string|undefined),
@@ -40,7 +53,8 @@ jQuery.prototype.accordion = function() {};
  *          size: string,
  *          type: string}}
  */
-var images_dialog_object = {
+var image_dialog_object = {
+  id: '',
   geometry: '',
   large: '',
   medium: '',
