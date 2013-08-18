@@ -60,7 +60,7 @@ module.exports = function (grunt) {
                             mountFolder(connect, '.'),
                             mountFolder(connect, '.tmp'),
                             mountFolder(connect, 'src'),
-                            connect.directory(options.base + '/src'),
+                            connect.directory(options.base + '/src')
                         ];
                     }
                 }
