@@ -30,49 +30,50 @@ var Turbolinks = {
 
 jQuery.prototype.accordion = function() {};
 
+jQuery.prototype.fileupload = function() {};
+
+
 /**
  *
- * @typedef {{id: (number|undefined),
+ * @typedef {{id: (string|number|undefined),
  *          url: (string|undefined),
- *          type: string}}
+ *          alt: (string|undefined)}}
  */
 var images_dialog_object = {
-  id: 0,
+  id: '',
   url: '',
-  type: ''
+  alt: ''
 };
 
 /**
  *
- * @typedef {{id: (string|undefined),
+ * @typedef {{id: string,
+ *          alt: string,
  *          geometry: (string|undefined),
- *          grid: (string|undefined),
- *          large: (string|undefined),
- *          medium: (string|undefined),
- *          original: string,
  *          size: string,
- *          type: string}}
+ *          sizes: Object}}
  */
 var image_dialog_object = {
   id: '',
+  alt: '',
   geometry: '',
-  large: '',
-  medium: '',
-  original: '',
   size: '',
-  type: ''
+  sizes: {}
 };
 
 /**
  *
- * @typedef {{id: string, url: string, html: string, type: string}}
+ * @typedef {{id: number, name: string, size: number, url: string, ext: string, mime_type: string}}
  */
 var file_dialog_object = {
-  id: '',
+  id: 0,
+  name: '',
+  size: '',
   url: '',
-  html: '',
-  type: ''
+  ext: '',
+  mime_type: ''
 };
+
 
 /**
  *
@@ -82,10 +83,25 @@ var file_dialog_object = {
  *          type: string,
  *          title: string}}
  */
-var link_dialog_object = {
+var pages_dialog_object = {
   url: '',
-  html: '',
   blank: false,
   type: '',
   title: '',
+};
+
+/**
+ *
+ * @typedef {{html: Array,
+ *          redirect_to: string,
+ *          image: Object,
+ *          file: Object,
+ *          message: string}}
+ */
+var json_response = {
+  html: [],
+  message: '',
+  redirect_to: '',
+  image: {},
+  file: {}
 };
