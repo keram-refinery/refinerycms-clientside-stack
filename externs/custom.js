@@ -105,3 +105,11 @@ var json_response = {
   image: {},
   file: {}
 };
+
+/**
+ * @typedef {{image_id: (number|string), buttons: (undefined|Array)}}
+ */
+var image_dialog_options = {
+    image_id: '',
+    buttons: []
+};

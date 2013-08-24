@@ -1,5 +1,13 @@
 refinery.admin = {
-  ui: {}
+  ui: {},
+
+    /**
+     * Backend path defined by Refinery::Core.backend_route
+     * Default: '/refinery'
+     *
+     * @type {string}
+     */
+    backend_path: '/refinery'
 };
 
 /**
