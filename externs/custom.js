@@ -87,7 +87,7 @@ var pages_dialog_object = {
   url: '',
   blank: false,
   type: '',
-  title: '',
+  title: ''
 };
 
 /**
@@ -96,7 +96,7 @@ var pages_dialog_object = {
  *          redirect_to: string,
  *          image: Object,
  *          file: Object,
- *          message: string}}
+ *          message: (Object|string|null)}}
  */
 var json_response = {
   html: [],

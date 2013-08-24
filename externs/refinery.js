@@ -5,379 +5,151 @@
  */
 
 /**
- *
- * @param {string} path
- * @param {*=} options
- * @param {Object=} Parent
+ * @param {...*} var_args
  *
  * @return {Object}
  */
-//refinery.n = function(path, options, Parent) {};
-
-/** @typedef {Object} */
-var refinery = {
-    "newInstance": function () {},
-    "extend": function () {},
-    "flash": function () {},
-    "validator": {
-        "email": function () {},
-        "url": function () {},
-        "page": function () {}
-    },
-    "provide": function () {},
-    "pubsub": {
-        "unbind": function () {},
-        "subscribe": function () {},
-        "unsubscribe": function () {},
-        "publish": function () {}
-    },
-    "xhr": {
-        "make": function () {},
-        "processHtml": function () {},
-        "processMessage": function () {},
-        "error": function () {},
-        "success": function () {}
-    },
-    "updatePartial": function () {},
-    "spinner": {
-        "on": function () {},
-        "off": function () {}
-    }
-};
+function refinery(var_args) { };
 
 /**
- * @constructor
- * @param {Object=} options
+ * Extend Child Object with Parent properties
+ *
+ * @param {Object} Child
+ * @param {Object} Parent
+ *
+ * @return {Object} Child
  */
-refinery.Object = function (options) {};
-
-refinery.Object.objectMethods = {};
-refinery.Object.objectPrototype = {};
-refinery.Object.objectConstructor = function (options) {};
-refinery.Object.State = function (options) {};
-
-refinery.Object.objectMethods.toUserInterface = function (holder) {};
-
-refinery.Object.prototype = {
-
-    /**
-     *
-     * @private
-     * @type {number}
-     */
-    id: 0,
-
-    /**
-     *
-     * @type {string}
-     */
-    name: 'Object',
-
-    /**
-     *
-     * @type {string}
-     */
-    version: '0.1',
-
-    /**
-     *
-     * @type {string}
-     */
-    module: 'refinery',
-
-    /**
-     *
-     * @type {Object|null}
-     */
-    options: null,
-
-    /**
-     *
-     * @type {Object|null}
-     */
-    events: null,
-
-    /**
-     *
-     * @type {Object|null}
-     */
-    holder: null,
-
-    /**
-     * State class instatiable via Object constructor
-     *
-     * @expose
-     * @constructor
-     */
-    State: refinery.ObjectState,
-
-    /**
-     * State instance
-     *
-     * @expose
-     *
-     * @type {?refinery.ObjectState}
-     */
-    state: null,
-
-    /**
-     * Default States
-     *
-     * @expose
-     *
-     * @type {?Object}
-     */
-    states: null,
-
-    /**
-     * Check or set object state
-     *
-     * @expose
-     * @param {string} action
-     * @param {boolean=} state
-     *
-     * @return {boolean}
-     */
-    is: function (action, state) {
-    },
-
-    /**
-     * Register Callback on event
-     * If callback return false none of other callback after that
-     * will be executed
-     *
-     * @public
-     * @param {string} eventName
-     * @param {Function} callback
-     *
-     * @return {Object} this
-     */
-    on: function (eventName, callback) {
-    },
-
-    /**
-     * Remove Callback from event
-     *
-     * @public
-     * @param {string} eventName
-     * @param {Function} callback
-     *
-     * @return {Object} this
-     */
-    off: function (eventName, callback) {
-    },
-
-    /**
-     * Register observer on object event
-     *
-     * @public
-     *
-     * @param {string}         eventName
-     * @param {Function=}  callback
-     *
-     * @return {Object}         self
-     */
-    subscribe: function (eventName, callback) {
-    },
-
-    /**
-     * Remove observer from object event
-     *
-     * @public
-     *
-     * @param {string}         eventName
-     * @param {Function=}  callback
-     *
-     * @return {Object}         self
-     */
-    unsubscribe: function (eventName, callback) {
-    },
-
-    /**
-     * Call registered callbacks and publish event for object observers
-     *
-     * @private
-     *
-     * @param {string}      eventName
-     * @param {Array=}    args
-     *
-     * @return {Object}
-     */
-    trigger: function (eventName, args) {
-    },
-
-    /**
-     * Unique Object id consist from his name and id
-     *
-     * @expose
-     *
-     * @type {string}
-     */
-    uid: '',
-
-    /**
-     * Fullname
-     *
-     * @public
-     *
-     * @return {string}
-     */
-    fullname: '',
-
-    /**
-     * Attach refinery.Object to DOM object (this.holder)
-     *
-     * @param {!jQuery} holder jQuery wrapper around DOM object
-     *
-     * @return {undefined}
-     */
-    attach_holder: function (holder) { },
-
-    dettach_holder: function () { },
-
-    /**
-     * Deinitialization
-     *
-     * @public
-     */
-    destroy: function () { },
-
-    /**
-     * Call destroy method od prototype applied to this
-     *
-     * @public
-     */
-    _destroy: function () { },
-
-    /**
-     * Initialization and binding
-     *
-     * @public
-     * @param {(jQuerySelector|jQuery|Element)} holder
-     *
-     * @return {Object} self
-     */
-    init: function (holder) {
-    }
-};
+refinery.extend = function (Child, Parent) { };
 
 /**
- * Create refinery Object
- *
- * @param {(Object|{objectPrototype: (Object|undefined),
- *                    objectConstructor: (undefined|function((undefined|Object)): ?),
- *                    name: (string|undefined),
- *                    version: (string|undefined),
- *                    module: (string|undefined),
- *                    options: (Object|undefined),
- *                    var_args})=} options
- *
- * @return {Object}
- */
-refinery.Object.create = function (options) { }
-
-/**
- * Remove refinery.Object instance from refinery.Object.instances, DOM element
- * and prospectively clean also other mess to enable GC
- *
- * @param {!jQuery} holder
- *
- * @return {undefined}
- */
-refinery.Object.unbind = function (holder) {
-};
-
-/**
- * refinery Object Instances
+ * Include html flash message into flash container
  *
  * @expose
  *
- * @type {Object}
+ * @param {string} type
+ * @param {string} message
  */
-refinery.Object.instances = {
-    /**
-     * Return all refinery.Object instances
-     *
-     * @return {Object}
-     */
-    all: function () {
-    },
-
-    /**
-     * Add instance
-     *
-     * @param {Object} instance
-     */
-    add: function (instance) {
-    },
-
-    /**
-     * Get Instance by UID
-     *
-     * @param {string} uid
-     * @return {Object|undefined}
-     */
-    get: function (uid) {
-    },
-
-    /**
-     * Remove instance by UID
-     *
-     * @param {string} uid
-     */
-    remove: function (uid) {
-    }
-};
+refinery.flash = function (type, message) { };
 
 
 /**
- * @constructor
- * @param {Object=} default_states
- * @param {Object=} tests define tests for providing some action
+ * Validator
+ *
+ * @expose
+ * @typedef {{email: RegExp, url: RegExp, page: RegExp}}
  */
-refinery.ObjectState = function (default_states, tests) {};
+refinery.validator = { };
 
-refinery.ObjectState.prototype = {
-    states: {},
+/**
+ * Builds an object structure for the provided namespace path,
+ * ensuring that names that already exist are not overwritten. For
+ * example:
+ * "a.b.c" -> a = {};a.b={};a.b.c={};
+ *
+ * @see goog.provide and goog.provideSymbol.
+ * @expose
+ * @param {string} path to the object that opt_object defines.
+ * @param {*=} opt_object the object to expose at the end of the path.
+ * @param {Object=} opt_objectToprovideTo The object to add the path to; default
+ *     is |window|.
+ */
+refinery.provide = function (path, opt_object, opt_objectToprovideTo) { };
+
+/**
+ * see  https://github.com/cowboy/jquery-tiny-pubsub
+ *
+ * @typedef {{unbind: Function, subscribe: Function, unsubscribe: Function, publish: Function}}
+ */
+refinery.pubsub = {};
+
+/**
+ * Wrapper around xhr calls with some basic response processing
+ *
+ * @expose
+ * @type {Object}
+ */
+refinery.xhr = {
 
     /**
-     * set state
-     *
-     * @param {string} state
-     * @param {boolean=} value
-     *
-     * @return {undefined}
-     */
-    set: function (state, value) {
-    },
-
-    /**
-     * get state
+     * Create and return jquery ajax object (promise) with default refinery
+     * processing of request fail or success
      *
      * @expose
-     * @param {string} state
+     * @param {string}   url
+     * @param {(Object.<string,*>|function (string,string,jQuery.jqXHR))=} data
+     * @param {jQuery=} holder
      *
-     * @return {boolean}
+     * @return {jQuery.jqXHR}
      */
-    get: function (state) {},
+    make: function (url, data, holder) { },
 
     /**
-     * toggle states
+     * todo
      *
-     * @param {...string} var_args
+     * @expose
+     * @param {Object|string} html
+     * @param {jQuery=} holder
+     * @param {boolean=} replaceHolder
      *
      * @return {undefined}
      */
-    toggle: function (var_args) {
-    },
+    processHtml: function (html, holder, replaceHolder) { },
 
     /**
-     * Work with object states
+     * todo
      *
-     * @param {string} action
+     * @expose
+     * @param {Object|string} message
      *
-     * @return {boolean}
+     * @return {undefined}
      */
-    is: function (action) {
-    }
+    processMessage: function (message) { },
+
+    /**
+     * Process HTTP Errors on calls
+     *
+     * @expose
+     * @param {jQuery.jqXHR} xhr
+     * @param {string=} status
+     *
+     * @return {undefined}
+     */
+    error: function (xhr, status) { },
+
+    /**
+     *
+     * @param {json_response} response
+     * @param {string} status
+     * @param {jQuery.jqXHR} xhr
+     * @param {jQuery=} holder
+     * @param {boolean=} replaceHolder
+     *
+     * @return {undefined}
+     */
+    success: function (response, status, xhr, holder, replaceHolder) { }
+};
+
+/**
+ * Indicate running action
+ *
+ * @expose
+ * @type {Object}
+ */
+refinery.spinner = {
+
+    /**
+     * Show spinner
+     *
+     * @expose
+     * @return {undefined}
+     */
+    on: function () { },
+
+    /**
+     * Turn off spinner
+     *
+     * @expose
+     * @return {undefined}
+     */
+    off: function () { }
 };
