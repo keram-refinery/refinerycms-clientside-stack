@@ -113,3 +113,11 @@ var image_dialog_options = {
     image_id: '',
     buttons: []
 };
+
+
+$.rails = {
+  /**
+   * @param {jQuery} element
+   */
+  handleRemote: function (element) {}
+};

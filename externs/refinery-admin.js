@@ -57,9 +57,6 @@ refinery.admin.Dialog.prototype = {
     insert: function () {
     },
 
-    after_load: function () {
-    },
-
     /**
      * Load dialog content
      *
@@ -91,43 +88,31 @@ refinery.admin.ImagesDialog = function (options) {};
 
 refinery.admin.ImagesDialog.prototype = {
     /**
-     * Select first image in library
-     * Put focus to first text input element
-     *
-     * @return {undefined}
-     */
-    after_load: function () {
-    },
-
-    /**
      * Handle image linked from library
      *
-     * @return {?{title: string, size: string, geometry: string, type: string}}
+     * @expose
+     * @param {jQuery} tab
+     * @return {undefined|{id: string}}
      */
-    library_tab: function (tab) {
+    existing_image_area: function (tab) {
     },
 
     /**
      * Handle image linked by url
      *
-     * @return {?{original: string, type: string}}
+     * @expose
+     * @param {jQuery} tab
+     * @return {undefined|{alt: string, url: string}}
      */
-    url_tab: function (tab) {
+    external_image_area: function (tab) {
     },
 
     /**
-     * Handle upload
+     * Handle uploaded image
      *
+     * @expose
+     * @param {json_response} json_response
      * @return {undefined}
      */
-    upload_tab: function () {
-    },
-
-    /**
-     * Propagate selected image wth attributes to dialog observers
-     *
-     * @return {Object} self
-     */
-    insert: function () {
-    }
+    upload_area: function (json_response) { }
 }

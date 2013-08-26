@@ -1,9 +1,14 @@
 
 /**
+ * Refinery Object
+ *
  * @constructor
+ * @expose
+ *
  * @param {Object=} options
+ * @param {boolean=} is_prototype
  */
-refinery.Object = function (options) {};
+refinery.Object = function (options, is_prototype) { };
 
 refinery.Object.objectMethods = {};
 refinery.Object.objectPrototype = {};

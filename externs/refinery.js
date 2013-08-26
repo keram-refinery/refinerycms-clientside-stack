@@ -56,11 +56,56 @@ refinery.validator = { };
 refinery.provide = function (path, opt_object, opt_objectToprovideTo) { };
 
 /**
- * see  https://github.com/cowboy/jquery-tiny-pubsub
+ * @see  https://github.com/cowboy/jquery-tiny-pubsub
  *
- * @typedef {{unbind: Function, subscribe: Function, unsubscribe: Function, publish: Function}}
  */
-refinery.pubsub = {};
+refinery.pubsub = {
+    /**
+     * Remove ALL subscribers/callbacks
+     *
+     * @expose
+     * @return {undefined}
+     */
+    unbind: function () {
+    },
+
+    /**
+     * Subscribe callback on Object event
+     *
+     * @expose
+     * @param {string} eventName
+     * @param {Function} callback
+     *
+     * @return {undefined}
+     */
+    subscribe: function (eventName, callback) {
+    },
+
+
+    /**
+     * Unsubscribe callback on Object event
+     *
+     * @expose
+     * @param {string} eventName
+     * @param {(Function|string|undefined)} callback
+     *
+     * @return {undefined}
+     */
+    unsubscribe: function (eventName, callback) {
+    },
+
+    /**
+     * Broadcast Object event to their observers with event datas
+     *
+     * @expose
+     * @param {string} eventName
+     * @param {*=} data
+     *
+     * @return {undefined}
+     */
+    publish: function (eventName, data) {
+    }
+};
 
 /**
  * Wrapper around xhr calls with some basic response processing
