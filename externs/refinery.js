@@ -198,3 +198,11 @@ refinery.spinner = {
      */
     off: function () { }
 };
+
+/**
+ * [ui description]
+ *
+ * @expose
+ * @type {Object}
+ */
+refinery.ui = {};
