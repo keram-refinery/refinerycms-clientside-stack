@@ -36,11 +36,13 @@ jQuery.prototype.fileupload = function() {};
 /**
  *
  * @typedef {{id: (string|number|undefined),
+ *          thumbnail: (string|undefined),
  *          url: (string|undefined),
  *          alt: (string|undefined)}}
  */
 var images_dialog_object = {
   id: '',
+  thumbnail: '',
   url: '',
   alt: ''
 };
