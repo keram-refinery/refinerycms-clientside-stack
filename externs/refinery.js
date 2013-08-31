@@ -200,6 +200,11 @@ refinery.spinner = {
 };
 
 /**
+ * @param {...*} var_args
+ */
+refinery.log = function (var_args) {};
+
+/**
  * [ui description]
  *
  * @expose
