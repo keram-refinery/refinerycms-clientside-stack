@@ -28,9 +28,15 @@ var Turbolinks = {
     visit: function () {}
 }
 
-jQuery.prototype.accordion = function() {};
+/**
+ * @param {...*} var_args
+ */
+jQuery.prototype.accordion = function (var_args) {};
 
-jQuery.prototype.fileupload = function() {};
+/**
+ * @param {...*} var_args
+ */
+jQuery.prototype.fileupload = function(var_args) {};
 
 
 /**
