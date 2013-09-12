@@ -38,7 +38,6 @@ jQuery.prototype.accordion = function (var_args) {};
  */
 jQuery.prototype.fileupload = function(var_args) {};
 
-
 /**
  *
  * @typedef {{id: (string|number|undefined),
@@ -120,6 +119,17 @@ var json_response = {
 var image_dialog_options = {
     image_id: '',
     buttons: []
+};
+
+/**
+ * @typedef  {{name: string, title: string, active: boolean}}
+ */
+var page_part = {
+    name: '',
+    title: '',
+    active: false,
+    id: '',
+    position: ''
 };
 
 
