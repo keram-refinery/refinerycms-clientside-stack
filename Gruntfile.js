@@ -120,10 +120,10 @@ module.exports = function (grunt) {
                     src = src.replace(/\/\*jslint.+\*\/\n/, '');
                     src = src.replace(/\/\*jshint.+\*\/\n/, '');
                     src = src.replace(/\/\*global.+\*\/\n/, '');
-                    if (/(^|\n)\(function ?\([^\)]*\) ?\{/.test(src)) {
-                        src = src.replace(/(^|\n)\(function ?\([^\)]*\) ?\{/, '');
-                        src = src.replace(/\}\([^\)]*\)\);\s*$/, '');
-                    }
+                    // if (/(^|\n)\(function ?\([^\)]*\) ?\{/.test(src)) {
+                    //     src = src.replace(/(^|\n)\(function ?\([^\)]*\) ?\{/, '');
+                    //     src = src.replace(/\}\([^\)]*\)\);\s*$/, '');
+                    // }
                     src = src.replace(/(^|\s+)'use strict';/, '');
                     src = src.replace(/^\n+/, '');
                     src = src.replace(/\n+$/, '');
