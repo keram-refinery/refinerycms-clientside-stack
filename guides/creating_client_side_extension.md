@@ -21,11 +21,11 @@ Note: steps above will be in "near" furure simplified with extension generator v
 Next we go deep in our code of our extension.
 Suppose we want build new wysiwig editor plugin to refinery and I select [epiceditor](http://epiceditor.com/)
 
-Code of this extension you can download from [github](https://github.com/keram-refinery/refinery-epiceditor).
+Code of this extension you can download from [github](https://github.com/keram-refinery/refinerycms-epiceditor).
 
 Download third party code to components directory:
 ```
-$ ls src/refinery-epiceditor/components/
+$ ls src/refinerycms-epiceditor/components/
 EpicEditor  refinery
 $
 
@@ -55,7 +55,7 @@ Update our module.js and add our custom configuration of Closure Compiler
 where especialy we define _externs_ files for compiler.
 Absolute path to ``externs/jquery-1.9.js`` is ``~/work_directory/refinerycms-clientside/externs/jquery-1.9.js``
 (Global extern file used also by other extensions).
-and for ``dir + '/externs/epiceditor.js'`` is ``~/work_directory/refinerycms-clientside/src/refinery-epiceditor/externs/epiceditor.js``
+and for ``dir + '/externs/epiceditor.js'`` is ``~/work_directory/refinerycms-clientside/src/refinerycms-epiceditor/externs/epiceditor.js``
 (Local extern file used only compile this extension).
 
 
