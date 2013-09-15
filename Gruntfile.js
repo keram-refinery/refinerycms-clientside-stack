@@ -127,7 +127,7 @@ module.exports = function (grunt) {
                     src = src.replace(/(^|\s+)'use strict';/, '');
                     src = src.replace(/^\n+/, '');
                     src = src.replace(/\n+$/, '');
-                    return '\n// Source: ' + filepath.replace(src_path, '~') + '\n' + src;
+                    return '\n// Source: ' + filepath.replace(src_path + '/', '') + '\n' + src;
                 }
             }
         },
@@ -222,7 +222,7 @@ module.exports = function (grunt) {
                 'expand': true,
                 'dot': true,
                 'cwd': module_path + '/styles',
-                'dest': module_path + '/.tmp/assets/stylesheets/refinery/',
+                'dest': module_path + '/.tmp/assets/stylesheets/',
                 'src': [
                     '*.scss', '*.css', '**/*.scss', '**/*.css'
                 ]
