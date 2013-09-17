@@ -39,6 +39,15 @@ jQuery.prototype.accordion = function (var_args) {};
 jQuery.prototype.fileupload = function(var_args) {};
 
 /**
+ * @typedef {jquery_ui_button}
+ */
+var jquery_ui_button = {
+  text: '',
+  'class': '',
+  click: function () {}
+};
+
+/**
  *
  * @typedef {{id: (string|number|undefined),
  *          thumbnail: (string|undefined),
