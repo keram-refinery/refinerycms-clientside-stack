@@ -7,7 +7,7 @@ refinery.admin = {
      *
      * @type {string}
      */
-    backend_path: '/refinery'
+    backend_path: ''
 };
 
 /**
@@ -116,3 +116,42 @@ refinery.admin.ImagesDialog.prototype = {
      */
     upload_area: function (json_response) { }
 }
+
+
+/**
+ * @constructor
+ * @extends {refinery.admin.Dialog}
+ * @param {*=} options
+ */
+refinery.admin.ImageDialog = function (options) {};
+
+refinery.admin.ImageDialog.prototype = { };
+
+
+/**
+ * @constructor
+ * @extends {refinery.admin.Dialog}
+ * @param {*=} options
+ */
+refinery.admin.ResourcesDialog = function (options) {};
+
+refinery.admin.ResourcesDialog.prototype = {
+    /**
+     * Handle resource linked from library
+     *
+     * @expose
+     * @param {!jQuery} li
+     * @return {file_dialog_object}
+     */
+    existing_resource_area: function (li) {
+    },
+
+    /**
+     * Handle uploaded file
+     *
+     * @param {json_response} json_response
+     * @return {undefined}
+     */
+    upload_area: function (json_response) {
+    }
+};

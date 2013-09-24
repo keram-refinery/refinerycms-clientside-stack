@@ -51,8 +51,8 @@ var jquery_ui_button = {
  *
  * @typedef {{id: (string|number|undefined),
  *          thumbnail: (string|undefined),
- *          url: (string|undefined),
- *          alt: (string|undefined)}}
+ *          url: string,
+ *          alt: string}}
  */
 var images_dialog_object = {
   id: '',
@@ -99,7 +99,7 @@ var file_dialog_object = {
  *          type: string,
  *          title: string}}
  */
-var pages_dialog_object = {
+var links_dialog_object = {
   url: '',
   blank: false,
   type: '',

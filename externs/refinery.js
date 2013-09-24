@@ -116,19 +116,6 @@ refinery.pubsub = {
 refinery.xhr = {
 
     /**
-     * Create and return jquery ajax object (promise) with default refinery
-     * processing of request fail or success
-     *
-     * @expose
-     * @param {string}   url
-     * @param {(Object.<string,*>|function (string,string,jQuery.jqXHR))=} data
-     * @param {jQuery=} holder
-     *
-     * @return {jQuery.jqXHR}
-     */
-    make: function (url, data, holder) { },
-
-    /**
      * todo
      *
      * @expose
@@ -203,6 +190,13 @@ refinery.spinner = {
  * @param {...*} var_args
  */
 refinery.log = function (var_args) {};
+
+/**
+ *
+ * @param  {string} str
+ * @return {string}
+ */
+refinery.htmlEncode = function (str) {};
 
 /**
  * [ui description]
