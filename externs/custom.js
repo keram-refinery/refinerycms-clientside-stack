@@ -39,6 +39,31 @@ jQuery.prototype.accordion = function (var_args) {};
 jQuery.prototype.fileupload = function(var_args) {};
 
 /**
+ * @param {...*} var_args
+ */
+jQuery.prototype.autocomplete = function(var_args) {};
+
+/**
+ * @typedef {jquery_ui_autocomplete_options}
+ */
+var jquery_ui_autocomplete_options = {
+  appendTo: '',
+  autoFocus: '',
+  delay: '',
+  disabled: '',
+  minLength: '',
+  position: '',
+  source: [],
+  select: function () { },
+  focus: function () { },
+  menu: {
+    active: false
+  },
+  multiple: false,
+  remote: false
+};
+
+/**
  * @typedef {jquery_ui_button}
  */
 var jquery_ui_button = {
@@ -46,6 +71,45 @@ var jquery_ui_button = {
   'class': '',
   click: function () {}
 };
+
+$.ui = {};
+
+$.ui.keyCode = {
+  "BACKSPACE":8,
+  "COMMA":188,
+  "DELETE":46,
+  "DOWN":40,
+  "END":35,
+  "ENTER":13,
+  "ESCAPE":27,
+  "HOME":36,
+  "LEFT":37,
+  "NUMPAD_ADD":107,
+  "NUMPAD_DECIMAL":110,
+  "NUMPAD_DIVIDE":111,
+  "NUMPAD_ENTER":108,
+  "NUMPAD_MULTIPLY":106,
+  "NUMPAD_SUBTRACT":109,
+  "PAGE_DOWN":34,
+  "PAGE_UP":33,
+  "PERIOD":190,
+  "RIGHT":39,
+  "SPACE":32,
+  "TAB":9,
+  "UP":38
+};
+
+
+$.ui.autocomplete = {
+  filter: function (data, fnc) { }
+};
+
+/**
+ * @typedef {{term: string}}
+ */
+var jquery_ui_autocomplete_request = {
+  term: ''
+}
 
 /**
  *
