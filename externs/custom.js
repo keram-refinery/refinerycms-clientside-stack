@@ -13,6 +13,7 @@ var console = {
 var ui;
 
 ui.newPanel = null;
+ui.newTab = null;
 
 var i18n = {};
 

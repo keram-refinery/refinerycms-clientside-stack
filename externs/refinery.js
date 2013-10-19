@@ -205,3 +205,31 @@ refinery.htmlEncode = function (str) {};
  * @type {Object}
  */
 refinery.ui = {};
+
+
+/**
+ * Refinery UserInterface
+ *
+ * @constructor
+ * @expose
+ * @extends {refinery.Object}
+ *
+ * @param {jQuery} holder
+ */
+refinery.UserInterface = function (holder) {};
+
+refinery.UserInterface.prototype = {
+    addObject: function (object) { },
+
+    init_tabs: function () { },
+
+    init_collapsible_lists: function () { },
+
+    init_sortable: function () { },
+
+    init_toggle_hide: function () { },
+
+    initialize_elements: function () { },
+
+    bind_events: function () { }
+}

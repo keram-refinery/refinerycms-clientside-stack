@@ -182,17 +182,6 @@ refinery.Object.prototype = {
     fullname: '',
 
     /**
-     * Attach refinery.Object to DOM object (this.holder)
-     *
-     * @param {!jQuery} holder jQuery wrapper around DOM object
-     *
-     * @return {undefined}
-     */
-    attach_holder: function (holder) { },
-
-    dettach_holder: function () { },
-
-    /**
      * Deinitialization
      *
      * @public
@@ -214,8 +203,7 @@ refinery.Object.prototype = {
      *
      * @return {Object} self
      */
-    init: function (holder) {
-    }
+    init: function (holder) { }
 };
 
 /**
@@ -232,60 +220,6 @@ refinery.Object.prototype = {
  * @return {Object}
  */
 refinery.Object.create = function (options) { }
-
-/**
- * Remove refinery.Object instance from refinery.Object.instances, DOM element
- * and prospectively clean also other mess to enable GC
- *
- * @param {!jQuery} holder
- *
- * @return {undefined}
- */
-refinery.Object.unbind = function (holder) {
-};
-
-/**
- * refinery Object Instances
- *
- * @expose
- *
- * @type {Object}
- */
-refinery.Object.instances = {
-    /**
-     * Return all refinery.Object instances
-     *
-     * @return {Object}
-     */
-    all: function () {
-    },
-
-    /**
-     * Add instance
-     *
-     * @param {Object} instance
-     */
-    add: function (instance) {
-    },
-
-    /**
-     * Get Instance by UID
-     *
-     * @param {string} uid
-     * @return {Object|undefined}
-     */
-    get: function (uid) {
-    },
-
-    /**
-     * Remove instance by UID
-     *
-     * @param {string} uid
-     */
-    remove: function (uid) {
-    }
-};
-
 
 /**
  * @constructor

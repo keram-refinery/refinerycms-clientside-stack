@@ -2121,7 +2121,7 @@ jQuery.prototype.unload = function(arg1, handler) {};
 jQuery.prototype.unwrap = function() {};
 
 /**
- * @param {(string|Array.<string>|function(number,*))=} arg1
+ * @param {(string|number|Array.<string>|function(number,*))=} arg1
  * @return {(string|number|Array.<string>|!jQuery)}
  */
 jQuery.prototype.val = function(arg1) {};
@@ -2194,3 +2194,9 @@ jQuery.prototype.nestedSortable = function(args) {};
 * @param {...*} args
 */
 jQuery.prototype.selectable = function(args) {};
+
+
+/**
+* @param {...*} args
+*/
+$.cookie = function(args) {};
