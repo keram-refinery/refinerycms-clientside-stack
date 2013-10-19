@@ -53,7 +53,8 @@
     "grunt-connect-proxy": "~0.1.2",
     "matchdep": "~0.1.1",
     "chai": "~1.6.0",
-    "sinon": "~1.7.3"
+    "sinon": "~1.7.3",
+    "grunt-contrib-sass": "~0.5.0"
   },
   "engines": {
     "node": ">=0.10.1"
