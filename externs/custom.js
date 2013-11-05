@@ -117,12 +117,14 @@ var jquery_ui_autocomplete_request = {
  * @typedef {{id: (string|number|undefined),
  *          thumbnail: (string|undefined),
  *          url: string,
+ *          caption: (string|undefined),
  *          alt: string}}
  */
 var images_dialog_object = {
   id: '',
   thumbnail: '',
   url: '',
+  caption: '',
   alt: ''
 };
 
@@ -130,6 +132,7 @@ var images_dialog_object = {
  *
  * @typedef {{id: string,
  *          alt: string,
+ *          caption: (string|undefined),
  *          geometry: (string|undefined),
  *          size: string,
  *          sizes: Object}}
@@ -137,6 +140,7 @@ var images_dialog_object = {
 var image_dialog_object = {
   id: '',
   alt: '',
+  caption: '',
   geometry: '',
   size: '',
   sizes: {}
